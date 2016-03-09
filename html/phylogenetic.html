@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="../css/fonts-min.css" />
+	<script type="text/javascript" src="../scripts/raphael-min.js" ></script>
+	<script type="text/javascript" src="../scripts/yui.js"></script>
+	<script type="text/javascript" src="../scripts/jsphylosvg-min.js"></script>
+
+	<!-- unitip -->
+	<link rel="stylesheet" type="text/css" href="../css/unitip.css" >
+	<script type="text/javascript" src="../scripts/unitip.js"></script>
+  <script type="text/javascript" src="../data/newick_data.js"></script>
+	<script type="text/javascript">
+    window.onload = function(){
+      var dataObject = { newick: four };
+      phylocanvas = new Smits.PhyloCanvas(
+        dataObject,
+        'svgCanvas',
+        2200, 2200,
+        'circular'
+
+      );
+      init(); //unitip
+    };
+	</script>
+</head>
+<body>
+	<div id="svgCanvas"> </div>
+</body>
+</html>

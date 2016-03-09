@@ -1,0 +1,88 @@
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+.node {
+  font: 12px sans-serif;
+}
+
+.node:hover {
+  font: 14px sans-serif;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.label {
+  font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  /*text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;*/
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Wire+One);
+
+body {
+  font-family: "Wire One";
+  margin: auto;
+  position: relative;
+  padding: 20px;
+  height: 100%;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+#center-container {
+  width:1200px;
+  left:150px;
+  background-color:#1a1a1a;
+  color:#ccc;
+}
+#infovis {
+  position:relative;
+  width:1200px;
+  height:1200px;
+  margin:auto;
+  overflow:hidden;
+}
+
+.text {
+    margin: 7px;
+}
+
+#inner-details {
+    font-size:0.8em;
+    list-style:none;
+    margin:7px;
+}
+
+
+
+
