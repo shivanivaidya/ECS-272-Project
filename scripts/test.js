@@ -27,10 +27,14 @@ function path(ele, tree){
         c_bracket = tree.indexOf("\)");
         c = findClosestBracket(o_bracket, c_bracket);
 
-        if(c == "ob")
-          n++;
-      }
+        if(c == "ob"){
+          closest_cb = tree.indexOf("\)");
+          temp_tree = tree.substring(0, closest_cb);
 
+          tn = temp_tree.split('\(').length-1;
+          n = n+ tn;
+        }
+      }
       o_bracket = tree.indexOf("\(");
       c_bracket = tree.indexOf("\)");
       closest = findClosestBracket(o_bracket, c_bracket);
@@ -74,4 +78,4 @@ function findClosestBracket(ob, cb){
     return "cb";
 }
 
-path("one", t_names);
+path("Muhyi al-Millat Shah Jahan III", four);
