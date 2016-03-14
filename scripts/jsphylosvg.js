@@ -1127,13 +1127,16 @@ Smits.PhyloCanvas.NexmlParse.prototype = {
 		mouseRollOut : function(params) {
 			params.node.edgeCircleHighlight.hide();
 			params.textEl.attr({ fill: '#000' });
-      if(params.node.clicked == true){
+      if(params.node.name == selected_node.node.name){
         params.textEl.attr({ fill: 'red' });
       }
 		},
     onClickAction : function(params) {
-      params.node.clicked = true;
+      if (typeof selected_node != 'undefined')
+        selected_node.textEl.attr({ fill: '#000' });
+      setSelectedNode(params);
       params.textEl.attr({ fill: 'red' });
+
       path = pathFromRoot(params.node.name, newick_data);
       var table = document.getElementById("myTable");
       table.innerHTML = "";
