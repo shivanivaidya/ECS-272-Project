@@ -21,7 +21,7 @@ var svg = d3.select("body").append("svg")
 .append("g")
 .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-root = books_right_10;
+root = books_right;
 
 function initialize(){
   nodes = pack.nodes(root);
