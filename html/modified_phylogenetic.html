@@ -1,0 +1,40 @@
+<html>
+<head>
+  <script type="text/javascript" src="../data/data.js"></script>
+	<script type="text/javascript" src="../scripts/raphael-min.js" ></script>
+	<script type="text/javascript" src="../scripts/jsphylosvg.js"></script>
+  <script type="text/javascript" src="../data/newick_data.js"></script>
+  <script type="text/javascript" src="../scripts/services.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script type="text/javascript">
+    window.onload = function(){
+      var dataObject = { newick: six };
+      phylocanvas = new Smits.PhyloCanvas(
+        dataObject,
+        'svgCanvas',
+        2000, 2000,
+        'circular'
+      );
+      phylocanvas = new Smits.PhyloCanvas(
+        dataObject,
+        'svgPath',
+        400, 1000
+      );
+    };
+	</script>
+  <style>
+    td {
+      text-align: center;
+    }
+  </style>
+</head>
+  <body>
+    <table style="width:100%">
+      <tr>
+        <td><div id="svgCanvas"> </div></td>
+        <td><div id="svgPath"</div></td>
+      </tr>
+    </table>
+  </body>
+</html>
+

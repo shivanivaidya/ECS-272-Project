@@ -80,7 +80,7 @@ function init(){
       html += "<ul>";
       node.eachAdjacency(function(adj){
         var child = adj.nodeTo;
-        if (child.data) {
+        if (child.data && typeof child.data.fc_value != 'undefined') {
           var fc_value = child.data.fc_value;
           html += "<li>" + child.name + " " + "<div class=\"relation\">(FC: " + fc_value + ")</div></li>";
         }
@@ -90,7 +90,7 @@ function init(){
     }
   });
   //load JSON data.
-  ht.loadJSON(books_right);
+  ht.loadJSON(books_center);
   //compute positions and plot.
   ht.refresh();
   //end

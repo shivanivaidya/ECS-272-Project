@@ -44,7 +44,7 @@ var r_svg = d3.select("body").append("svg")
 .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
 
-root = books_nos;
+root = groups;
 root.x0 = width / 2;
 root.y0 = 0;
 

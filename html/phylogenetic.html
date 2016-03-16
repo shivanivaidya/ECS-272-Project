@@ -1,14 +1,14 @@
 <html>
 <head>
-	<script type="text/javascript" src="../scripts/raphael-min.js" ></script>
-	<script type="text/javascript" src="../scripts/jsphylosvg.js"></script>
-  <script type="text/javascript" src="../data/newick_data.js"></script>
   <script type="text/javascript" src="../data/data.js"></script>
+	<script type="text/javascript" src="../scripts/raphael-min.js" ></script>
+	<script type="text/javascript" src="../scripts/jsphylosvg-min.js"></script>
+  <script type="text/javascript" src="../data/newick_data.js"></script>
   <script type="text/javascript" src="../scripts/services.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script type="text/javascript">
     window.onload = function(){
-      var dataObject = { newick: four };
+      var dataObject = { newick: six };
       phylocanvas = new Smits.PhyloCanvas(
         dataObject,
         'svgCanvas',
@@ -27,11 +27,9 @@
     <table style="width:100%">
       <tr>
         <td><div id="svgCanvas"> </div></td>
-        <td><table id="myTable">
-          </table></td>
+        <td><div id="svgPath"</div></td>
       </tr>
     </table>
   </body>
 </html>
-
 
