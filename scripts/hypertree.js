@@ -90,7 +90,7 @@ function init(){
     }
   });
   //load JSON data.
-  ht.loadJSON(books_center);
+  ht.loadJSON(mughal);
   //compute positions and plot.
   ht.refresh();
   //end

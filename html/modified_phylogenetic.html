@@ -1,40 +1,84 @@
 <html>
 <head>
-  <script type="text/javascript" src="../data/data.js"></script>
 	<script type="text/javascript" src="../scripts/raphael-min.js" ></script>
 	<script type="text/javascript" src="../scripts/jsphylosvg.js"></script>
   <script type="text/javascript" src="../data/newick_data.js"></script>
+  <script type="text/javascript" src="../data/data.js"></script>
   <script type="text/javascript" src="../scripts/services.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript">
-    window.onload = function(){
-      var dataObject = { newick: six };
-      phylocanvas = new Smits.PhyloCanvas(
-        dataObject,
-        'svgCanvas',
-        2000, 2000,
-        'circular'
-      );
-      phylocanvas = new Smits.PhyloCanvas(
-        dataObject,
-        'svgPath',
-        400, 1000
-      );
-    };
-	</script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+        window.onload = function(){
+          var dataObject = { newick: seven };
+          phylocanvas = new Smits.PhyloCanvas(
+            dataObject,
+            'svgCanvas',
+            2200, 2200,
+            'circular'
+          );
+          $scope.interNodes = interNodes;
+        };
+
+        $scope.update = function(){
+          $scope.showDetails = true;
+          console.log($scope.selectedNode);
+        }
+
+      });
+    </script>
   <style>
-    td {
+    table#details,th#details,td#details {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th, td {padding: 5px;
       text-align: center;
     }
   </style>
 </head>
   <body>
+    <div>
+      <button align="center" type="button" class="btn btn-info" onclick="rotate()">Rotate</button>
+    </div>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Select Intermediate Node</label>
+        <div class="col-sm-2">
+          <select ng-options="i.name for i in interNodes"
+                  ng-model="selectedNode" ng-change="update()"></select>
+        </div>
+      </div>
+
+      <div style="float: right;" ng-show="showDetails" ng-init="showDetails = false">
+        <table id="details">
+          <tr>
+            <th>Node Name</th>
+            <th>No. of Immediate Children</th>
+            <th>No. of Children in Sub-tree</th>
+            <th>Level</th>
+          </tr>
+          <tr>
+            <td>{{selectedNode.name}}</td>
+            <td>{{selectedNode.children.length}}</td>
+            <td>{{selectedNode._countAllChildren}}</td>
+            <td>{{selectedNode.level}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <table style="width:100%">
       <tr>
-        <td><div id="svgCanvas"> </div></td>
-        <td><div id="svgPath"</div></td>
+        <td><div id="svgCanvas" width = "2000"> </div></td>
+        <td><table id="myTable" width = "300">
+          </table></td>
       </tr>
     </table>
+
   </body>
 </html>
 
